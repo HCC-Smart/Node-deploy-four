@@ -56,10 +56,10 @@ router.post('/create_bookStore', authenticate, async (req, res) => {
         });
 
         if(!newBookStore) {
-            return res.status(400).json({status: 400, message: "BookStore was not created!"})
+            return res.status(400).json({status: 400, message: "BookStore was not added!"})
         }
 
-        res.status(200).json({status: 200, message: "BookStore successFully created!"})
+        res.status(200).json({status: 200, message: "BookStore successFully added"})
 
     } catch (error) {
         res.status(500).json({status: 500, message: error.message})

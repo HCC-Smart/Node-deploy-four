@@ -33,10 +33,10 @@ router.post('/signup', async (req, res) => {
             }
         })
 
-        res.status(201).json({status: 201, message: "Owner created successFully", newOwner})
+        res.status(201).json({status: 201, message: "Owner added successFully", newOwner})
 
     } catch (error) {
-        res.status(500).json({status: 500, message: "Something went wrong", error: error.message})
+        res.status(500).json({status: 500, message: "Something wrong", error: error.message})
     }
 })
 
@@ -58,7 +58,7 @@ router.post("/login", async (req, res) => {
         const isCorrectPassword =  bcrypt.compare(password, existingOwner.password)
 
         if(!isCorrectPassword) {
-            return res.status(401).json({status: 401, message: "Password is not correct"})
+            return res.status(401).json({status: 401, message: "Password is incorrect"})
         }
 
         const token = jwt.sign(
@@ -67,10 +67,10 @@ router.post("/login", async (req, res) => {
             {expiresIn: "1h"}
         )
 
-        res.status(200).json({status: 200, message: "Owner logged in successfully", token})
+        res.status(200).json({status: 200, message: "Owner logged successfully", token})
 
     } catch (error) {
-        res.status(500).json({status: 500, message: "Something went wrong", error: error.message})
+        res.status(500).json({status: 500, message: "Something  wrong", error: error.message})
     }
 })
 

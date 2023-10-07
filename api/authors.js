@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
         
         const authors = await prisma.author.findMany();
         if(authors.length === 0) {
-            return res.status(404).json({status: 404, message: "Authores not found"});
+            return res.status(404).json({status: 404, message: "Authors not found"});
         }
 
         res.json(authors)
@@ -54,10 +54,10 @@ router.post("/create_author", authenticate,  async (req, res) => {
         });
 
         if(!newAuthor) {
-            return res.status(400).json({status: 400, message: "Author was not created!"})
+            return res.status(400).json({status: 400, message: "Author was not added"})
         }
 
-        res.status(200).json({status: 200, message: "Author successFully created!"})
+        res.status(200).json({status: 200, message: "Author successFully added!"})
 
     } catch (error) {
         res.status(500).json({status: 500, message: error.message})

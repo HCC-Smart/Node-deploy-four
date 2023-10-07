@@ -58,7 +58,7 @@ router.post('/create_book',authenticate, async (req, res) => {
         });
 
         if(!newBook) {
-            return res.status(400).json({status: 400, messsage: "Book was not created!"})
+            return res.status(400).json({status: 400, messsage: "Book was not added"})
         }
 
         res.status(200).json({status: 200, message: "Book successFully created!"})
@@ -89,7 +89,7 @@ router.put('/update_book/:id', authenticate, async (req, res) => {
         });
 
         if(!updateBook) {
-            return res.status(400).json({status: 400, message: "Book was not updated!"})
+            return res.status(400).json({status: 400, message: "Book not updated!"})
         }
 
         res.status(200).json({status: 200, message: "Book successFully update"})
