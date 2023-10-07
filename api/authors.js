@@ -42,7 +42,7 @@ router.get("/:id", async (req, res) => {
     }
 });
 
-router.post("/create_author", authenticate,  async (req, res) => {
+router.post("/create-author", authenticate,  async (req, res) => {
     try {
         
         const {name} = req.body;

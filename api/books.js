@@ -61,7 +61,7 @@ router.post('/create_book',authenticate, async (req, res) => {
             return res.status(400).json({status: 400, messsage: "Book was not added"})
         }
 
-        res.status(200).json({status: 200, message: "Book successFully created!"})
+        res.status(200).json({status: 200, message: "Book successFully added!"})
 
     } catch (error) {
         res.status(500).json({status: 500, message: error.message})
